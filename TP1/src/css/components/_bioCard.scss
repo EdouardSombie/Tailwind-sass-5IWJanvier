@@ -1,0 +1,5 @@
+@use "../partials/functions" as f;
+
+.bioCard {
+	width: f.rem(320);
+}
