@@ -1,0 +1,12 @@
+@use "../partials/variables" as v;
+
+.container {
+	margin: 0;
+	width: 100%;
+	padding: 1rem;
+	@each $name, $value in v.$breakpoints {
+		@media screen and (min-width: $value) {
+			max-width: calc($value - 4rem);
+		}
+	}
+}
