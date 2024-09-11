@@ -1,4 +1,4 @@
-/*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap"); /*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
 /*
 Document
 ========
@@ -176,10 +176,79 @@ summary {
   display: list-item;
 }
 
+body {
+  font-family: "Istok Web", sans-serif;
+}
+
+/* MARGIN */
+.mt-1 {
+  margin-top: 0.25rem !important;
+}
+
+.mb-1 {
+  margin-bottom: 0.25rem !important;
+}
+
+.mt-2 {
+  margin-top: 0.5rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+.mt-3 {
+  margin-top: 0.75rem !important;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem !important;
+}
+
+.mt-4 {
+  margin-top: 1rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+.mt-5 {
+  margin-top: 1.25rem !important;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem !important;
+}
+
+.mt-6 {
+  margin-top: 1.5rem !important;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem !important;
+}
+
+/* COLORS */
+:root {
+  --white: #fff;
+  --white-light: white;
+  --black: #000;
+  --black-light: #4d4d4d;
+  --blue: #5d7a97;
+  --blue-light: #8ca2b8;
+  --pink: #ff2896;
+  --pink-light: #ff69b6;
+  --orange: #ff9b65;
+  --orange-light: #ffb993;
+  --green: #00d5d5;
+  --green-light: #2fffff;
+}
+
 .container {
-  margin: 0;
+  margin: auto;
   width: 100%;
-  padding: 1rem;
+  padding: 0 1rem;
 }
 @media screen and (min-width: 640px) {
   .container {
@@ -208,6 +277,12 @@ summary {
 }
 
 .bioCard {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0;
   width: 20rem;
 }
 .bioCard__img {

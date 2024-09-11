@@ -1,8 +1,9 @@
 @use "../partials/functions" as f;
+@use "../partials/mixins" as m;
 
 .bioCard {
+	@include m.flexbox(column, nowrap, flex-start, stretch);
 	width: f.rem(320);
-
 	&__img {
 		border-radius: 9999px;
 		width: f.rem(176);
