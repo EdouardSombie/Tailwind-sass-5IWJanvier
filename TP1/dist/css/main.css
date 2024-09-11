@@ -235,8 +235,8 @@ body {
   --white-light: white;
   --black: #000;
   --black-light: #4d4d4d;
-  --blue: #5d7a97;
-  --blue-light: #8ca2b8;
+  --blue: #1e293a;
+  --blue-light: #49648d;
   --pink: #ff2896;
   --pink-light: #ff69b6;
   --orange: #ff9b65;
@@ -284,12 +284,54 @@ body {
   align-items: stretch;
   gap: 0;
   width: 20rem;
+  border-radius: 1rem;
+  background-color: var(--blue);
+  position: relative;
+  padding: 1rem;
+}
+.bioCard__header {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0;
+}
+.bioCard__a {
+  display: flex;
+  width: 2rem;
+  aspect-ratio: 1/1;
+  border-radius: 9999px;
+  background: var(--white);
+  color: var(--pink);
+}
+.bioCard__a svg {
+  margin: auto;
+  fill: currentColor;
+}
+.bioCard__a svg path {
+  fill: currentColor;
 }
 .bioCard__img {
   border-radius: 9999px;
   width: 11rem;
   aspect-ratio: 1/1;
   object-fit: cover;
+}
+.bioCard__ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -4,10 +4,29 @@
 .bioCard {
 	@include m.flexbox(column, nowrap, flex-start, stretch);
 	width: f.rem(320);
+	border-radius: f.rem(16);
+	background-color: var(--blue);
+	position: relative;
+	padding: 1rem;
+	&__header {
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
+		right: 1rem;
+		@include m.flexbox(row, nowrap, flex-end, center);
+	}
+	&__a {
+		@include m.pillButton(var(--white), var(--pink));
+	}
 	&__img {
 		border-radius: 9999px;
 		width: f.rem(176);
 		aspect-ratio: 1/1;
 		object-fit: cover;
+	}
+
+	&__ul {
+		@include m.resetList;
+		@include m.flexbox(row, wrap, center, center, f.rem(24));
 	}
 }
