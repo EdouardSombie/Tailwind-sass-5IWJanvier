@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @import url("https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+  body {
+    font-family: "Istok Web", sans-serif;
+  }
+}
+
+@layer components {
+  .btn {
+    & path {
+      @apply fill-current;
+    }
+    @apply dark:text-lightBlue flex aspect-square w-8 items-center justify-center rounded-full bg-white text-pink-500;
+  }
+  .btn-alt {
+    @apply from-aquamarine-400 bg-gradient-to-b to-cyan-500 text-black dark:from-pink-500 dark:to-orange-300 dark:text-white;
+  }
+}
