@@ -1,13 +1,33 @@
 @use "../partials/functions" as f;
 @use "../partials/mixins" as m;
+@use "../partials/variables" as v;
+@use "sass:map";
 
 .bioCard {
-	@include m.flexbox(column, nowrap, flex-start, stretch);
+	// Pour la suite (dark mode...)
+	// Définir des variables locales
+	// background-color: var(--bg-color);
+	// --bg-color: var(--blue);
+	// @media (prefers-color-scheme: dark) {
+	// 	--bg-color: var(--white);
+	// }
+	// &--dark{--bg-color: var(--white);}
+
+	@include m.flexbox(column, nowrap, flex-start, center);
 	width: f.rem(320);
 	border-radius: f.rem(16);
 	background-color: var(--blue);
 	position: relative;
-	padding: 1rem;
+	padding: f.rem(32);
+	color: var(--lightBlue);
+	text-align: center;
+	overflow: hidden;
+
+	// Styles responsive
+	@media screen and (min-width:#{map.get(v.$breakpoints, 'lg')}) {
+		width: f.rem(640);
+	}
+
 	&__header {
 		position: absolute;
 		top: 1rem;
@@ -17,16 +37,60 @@
 	}
 	&__a {
 		@include m.pillButton(var(--white), var(--pink));
+		// Classe modifier
+		&--alt {
+			@include m.pillButton(
+				linear-gradient(to bottom, var(--lightGreen) 0%, var(--green) 100%),
+				var(--black),
+				true
+			);
+		}
 	}
 	&__img {
-		border-radius: 9999px;
-		width: f.rem(176);
-		aspect-ratio: 1/1;
-		object-fit: cover;
+		@include m.roundImage(f.rem(176));
+		filter: saturate(0);
+		margin-bottom: f.rem(24);
 	}
-
+	&__h1 {
+		margin-top: 0;
+		margin-bottom: f.rem(12);
+		font-size: f.rem(24);
+		@include m.textGradient(bottom, var(--pink), var(--orange));
+	}
+	&__h2 {
+		font-size: f.rem(20);
+		font-weight: 400;
+		margin-top: 0;
+		margin-bottom: f.rem(24);
+	}
+	&__hr {
+		width: 100%;
+		border: solid thin currentColor;
+		margin-top: 0;
+		margin-bottom: f.rem(16);
+	}
+	&__p {
+		line-height: normal;
+		margin-top: 0;
+		margin-bottom: f.rem(48);
+	}
+	&__footer {
+		position: relative;
+		width: 100%;
+		&::before {
+			content: "";
+			position: absolute;
+			top: -2rem;
+			left: -2rem;
+			right: -2rem;
+			bottom: -4rem;
+			background: linear-gradient(-187deg, var(--orange) 0%, var(--pink) 30%);
+			transform: skewY(7deg);
+		}
+	}
 	&__ul {
 		@include m.resetList;
 		@include m.flexbox(row, wrap, center, center, f.rem(24));
+		position: relative;
 	}
 }

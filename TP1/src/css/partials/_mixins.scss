@@ -35,3 +35,17 @@
 	text-decoration: none;
 	color: inherit;
 }
+
+@mixin roundImage($width) {
+	border-radius: 9999px;
+	width: $width;
+	aspect-ratio: 1/1;
+	object-fit: cover;
+	display: inline-block;
+}
+
+@mixin textGradient($direction, $startColor, $endColor) {
+	background: linear-gradient(to $direction, $startColor 0%, $endColor 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
